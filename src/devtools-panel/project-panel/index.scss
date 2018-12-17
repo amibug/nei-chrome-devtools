@@ -1,0 +1,42 @@
+/*
+ * @Author: hzwuyuedong
+ * @Date: 2018-12-17 15:39:25
+ * @Last Modified by:   hzwuyuedong
+ * @Last Modified time: 2018-12-17 15:39:25
+ */
+
+.project-panel {
+  .empty {
+    padding-top: 60px;
+    text-align: center;
+    color: #999;
+    border-top: 1px solid #e8e8e8
+  }
+
+  * {
+    font-size: 12px !important;
+  }
+
+  td {
+    padding: 4px 8px !important;
+  }
+
+  .ant-tabs-tab {
+    text-align: left !important;
+    margin: 2px 0 0 0 !important;
+    padding: 3px 10px !important;
+  }
+
+  .ant-tabs-ink-bar {
+    height: 20px !important;
+  }
+
+  .ant-tabs .ant-tabs-left-content {
+    padding-left: 0;
+    border: none;
+  }
+
+  .ant-table-small {
+    border-radius: 0 !important;
+  }
+}

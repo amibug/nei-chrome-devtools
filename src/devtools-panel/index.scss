@@ -1,0 +1,37 @@
+/*
+ * @Author: hzwuyuedong
+ * @Date: 2018-12-17 15:39:35
+ * @Last Modified by:   hzwuyuedong
+ * @Last Modified time: 2018-12-17 15:39:35
+ */
+
+.container {
+  position: relative;
+  margin-top: -1px;
+  height: 100%;
+
+  .ant-tabs-bar {
+    margin-bottom: -1px !important;
+  }
+
+  .ant-tabs-tab {
+    border-radius: 0 !important;
+    margin-right: -1px !important;
+  }
+
+  .add-btn-1 {
+    position: absolute;
+    right: 6px;
+    top: 8px;
+    z-index: 999;
+  }
+
+  .add-btn-2 {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    z-index: 999;
+    margin-left: -50px;
+    margin-top: -20px;
+  }
+}
