@@ -1,4 +1,5 @@
 const path = require('path');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
   entry: {
@@ -30,5 +31,14 @@ module.exports = {
       }
     ]
   },
-  devtool: 'cheap-module-source-map'
+  devtool: 'cheap-module-source-map',
+  plugins: [
+    new CopyWebpackPlugin([
+      { from: 'src/manifest.json', to: 'manifest.json' },
+      { from: 'src/background.html', to: 'background.html' },
+      { from: 'src/devtools.html', to: 'devtools.html' },
+      { from: 'src/devtools-panel.html', to: 'devtools-panel.html' },
+      { from: 'src/public', to: 'public', toType: 'dir' },
+    ]),
+  ]
 };
