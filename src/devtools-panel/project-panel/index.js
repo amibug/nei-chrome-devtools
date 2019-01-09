@@ -8,9 +8,9 @@
 'use strict';
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Button, Icon, Table, Tabs, Tooltip, Switch, Spin } from 'antd';
+import { Table, Tabs, Spin } from 'antd';
 import { clone, request, getPathByProjectId, getFavoritePathsByProjectId, addPath, removePath, updatePath, updateFavoritePath, addFavoritePath, removeFavoritePath } from '../../util';
-
+import List from './list';
 import './index.scss';
 
 const { Column } = Table;
@@ -154,43 +154,12 @@ class ProjectPanel extends Component {
             groups.map((group) => {
               return (
                 <TabPane tab={group.name} key={group.id} bordered={false}>
-                  <Table size="small" pagination={false} dataSource={group.interfaces}>
-                    <Column title="名称" dataIndex="name" key="name" />
-                    <Column title="方法" dataIndex="method" key="method" />
-                    <Column title="路径" dataIndex="path" key="path" />
-                    <Column
-                      title={<Tooltip placement="rightBottom"
-                        style={{fontSize: 12}}
-                        title="开启规则后，接口会被添加到常用接口分组">
-                        开启状态 <Icon type="question-circle" />
-                      </Tooltip>}
-                      dataIndex="enabled"
-                      key="enabled"
-                      render={(value, record) => {
-                        return <Switch checked={value} onChange={this.onEnableStatusChange.bind(this, record)} />;
-                      }}
-                    />
-                    {group.id === -1000 ? <Column
-                      title="业务分组"
-                      dataIndex="group"
-                      key="group"
-                      render={(value, record) => {
-                        return value && value.name;
-                      }}
-                    /> : null}
-                    {group.id === -1000 ? <Column
-                      title={<Tooltip placement="rightBottom"
-                        style={{fontSize: 12}}
-                        title="删除规则后，默认关闭接口mock">
-                        操作 <Icon type="question-circle" />
-                      </Tooltip>}
-                      dataIndex="id"
-                      key="id"
-                      render={(value, record) => {
-                        return <Button onClick={this.onRemoveFavoritePath.bind(this, record)} size="small">删除</Button>;
-                      }}
-                    /> : null}
-                  </Table>
+                  <List
+                    groupId={group.id}
+                    data={group.interfaces}
+                    onEnableStatusChange={this.onEnableStatusChange.bind(this)}
+                    onRemoveFavoritePath={this.onRemoveFavoritePath.bind(this)}
+                  />
                 </TabPane>
               );
             })

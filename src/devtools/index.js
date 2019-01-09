@@ -14,7 +14,9 @@ let panelWindow = null;
 chrome.webRequest.onBeforeRequest.addListener(
   function (details) {
     if (details.type === 'xmlhttprequest' && details.url && details.url.indexOf(MOCK_SERVER_DOMAIN) === -1) {
-      const url = details.url.replace(details.initiator, '');
+      const url = details.url
+        .replace(details.initiator, '')
+        .replace('/weapi', '/api'); // 兼容music加密
       const urlArray = url.split('?');
       const path = urlArray[0];
       // 判断是否命中缓存

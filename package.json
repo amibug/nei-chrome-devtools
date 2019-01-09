@@ -1,12 +1,13 @@
 {
   "name": "nei-chrome-devtools",
-  "version": "0.1.0",
+  "version": "1.0.1",
   "private": true,
   "dependencies": {
     "antd": "^3.11.2",
     "prop-types": "^15.6.2",
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
+    "react-highlight-words": "^0.15.1",
     "whatwg-fetch": "^3.0.0"
   },
   "scripts": {
