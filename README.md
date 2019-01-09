@@ -1,4 +1,4 @@
-## Nei Chrome插件
+## NEI Chrome插件
 #### 背景
 前端工程师在开发页面的时候，经常会碰到一个很实际的问题: 在后端接口还没开发完成时，前端怎么办?
 通常有两种方案：
@@ -26,7 +26,7 @@
 
 #### 使用教程
 1. 安装插件
-    - 插件地址： [nei-chrome-devtoos]()
+    - 插件地址： [nei-chrome-devtoos](https://chrome.google.com/webstore/detail/nei-chrome-devtools/lhkoddlalkcnmmnjkfjaaohbfeinckjn?hl=zh-CN)
 2. 新建项目(ps: 需要先登录，未登录会打开nei登录页面)，输入pid后会先显示该项目下所有的项目分组和接口 
     - 项目ID指的是项目链接中pid参数对应的值 https://nei.netease.com/project?pid=${pid}
     ![](https://p1.music.126.net/8G0u3GzZboJe7iZjeV3mvA==/109951163732240573.png)
