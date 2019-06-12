@@ -26,7 +26,7 @@ chrome.webRequest.onBeforeRequest.addListener(
         keys.forEach(k => {
           q = q + `${k}=${urlObj.query[k]}`;
         });
-        const url = path + q === '' ? q : `?${q}`;
+        const url = path + (q === '' ? q : `?${q}`);
         return { redirectUrl: `${MOCK_SERVER_DOMAIN}/api/apimock/${check.key}${url}` };
       }
     }
