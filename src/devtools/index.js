@@ -6,6 +6,7 @@
  */
 
 "use strict";
+import parse from 'url-parse';
 import { checkPathEnable } from '../util';
 
 const MOCK_SERVER_DOMAIN = 'https://nei.netease.com'
@@ -14,14 +15,18 @@ let panelWindow = null;
 chrome.webRequest.onBeforeRequest.addListener(
   function (details) {
     if (details.type === 'xmlhttprequest' && details.url && details.url.indexOf(MOCK_SERVER_DOMAIN) === -1) {
-      const url = details.url
-        .replace(details.initiator, '')
+      const urlObj = (parse(details.url, true) || {});
+      const path = urlObj.pathname
         .replace('/weapi', '/api'); // 兼容music加密
-      const urlArray = url.split('?');
-      const path = urlArray[0];
       // 判断是否命中缓存
       const check = checkPathEnable(path);
       if (check.flag) {
+        let q = '';
+        const keys = Object.keys(urlObj.query);
+        keys.forEach(k => {
+          q = q + `${k}=${urlObj.query[k]}`;
+        });
+        const url = path + q === '' ? q : `?${q}`;
         return { redirectUrl: `${MOCK_SERVER_DOMAIN}/api/apimock/${check.key}${url}` };
       }
     }
