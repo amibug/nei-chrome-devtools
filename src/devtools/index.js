@@ -9,7 +9,7 @@
 import parse from 'url-parse';
 import { checkPathEnable } from '../util';
 
-const MOCK_SERVER_DOMAIN = 'https://nei.netease.com'
+const MOCK_SERVER_DOMAIN = 'https://nei.hz.netease.com'
 let panelWindow = null;
 
 chrome.webRequest.onBeforeRequest.addListener(

@@ -40,7 +40,7 @@ class Index extends Component {
     });
   }
 
-  // https://nei.netease.com/api/projects/16189
+  // https://nei.hz.netease.com/api/projects/16189
   // 添加项目
   onAddProject = () => {
     this.setState({ showAddProjectDialog: true });
@@ -64,7 +64,7 @@ class Index extends Component {
   }
 
   onAddProjectOk = (params) => {
-    request(`https://nei.netease.com/api/projects/${params.projectId}`).then((res) => {
+    request(`https://nei.hz.netease.com/api/projects/${params.projectId}`).then((res) => {
       addProject({
         id: res.id,
         name: res.name,
@@ -152,9 +152,9 @@ chrome.devtools.inspectedWindow.eval(
 // 1. 进入devtools的时候，判断当前域名下面有没有项目
 // 2. 没有的话，新建项目
 // 3. 有的话遍历当前域名下面的项目
-// 4. 获取业务分组和接口 https://nei.netease.com/api/groups/?pid=36622 https://nei.netease.com/api/interfaces/?pid=36622
+// 4. 获取业务分组和接口 https://nei.hz.netease.com/api/groups/?pid=36622 https://nei.hz.netease.com/api/interfaces/?pid=36622
 // 5. 判断当前项目下paths的有效状态（是否被删除）和选中状态
 // 6. 开启和关闭接口
 
 // 页面运行时
-// 1. 拦截请求，判断origin !== 'nei.netease.com'并且path命中，两个条件都符合的话做307跳转
+// 1. 拦截请求，判断origin !== 'nei.hz.netease.com'并且path命中，两个条件都符合的话做307跳转
