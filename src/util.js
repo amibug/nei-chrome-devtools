@@ -37,7 +37,7 @@ export function uniq(array, value) {
 };
 
 export function request(url, options = {}) {
-  // https://nei.netease.com/api/interfaces/?pid=36622
+  // https://nei.hz.netease.com/api/interfaces/?pid=36622
   return fetch(url, options)
     .then(function (response) {
       return response.json();
@@ -52,7 +52,7 @@ export function request(url, options = {}) {
       const msg = code === 403 ? '无权限进行该操作~' : ex && ex.msg;
       message.error(msg);
       if (code === 401) {
-        window.open('https://nei.netease.com/login');
+        window.open('https://nei.hz.netease.com/login');
       }
       return Promise.reject(ex);
     });

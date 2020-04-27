@@ -45,8 +45,8 @@ class ProjectPanel extends Component {
     this.setState({
       loading: true,
     });
-    request(`https://nei.netease.com/api/groups/?pid=${id}`).then((groupRet = []) => {
-      request(`https://nei.netease.com/api/interfaces/?pid=${id}`).then((interfacesRet = []) => {
+    request(`https://nei.hz.netease.com/api/groups/?pid=${id}`).then((groupRet = []) => {
+      request(`https://nei.hz.netease.com/api/interfaces/?pid=${id}`).then((interfacesRet = []) => {
         this.setState({
           oriGropus: groupRet,
           oriInterfaces: interfacesRet,
