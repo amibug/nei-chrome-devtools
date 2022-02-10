@@ -23,7 +23,7 @@
     "babel-loader": "^8.0.4",
     "copy-webpack-plugin": "^4.6.0",
     "css-loader": "^2.0.0",
-    "node-sass": "^4.11.0",
+    "node-sass": "^7.0.0",
     "sass-loader": "^7.1.0",
     "style-loader": "^0.23.1",
     "webpack": "^4.27.1",
