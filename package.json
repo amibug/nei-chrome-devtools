@@ -8,7 +8,7 @@
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
     "react-highlight-words": "^0.15.1",
-    "url-parse": "^1.4.7",
+    "url-parse": "^1.5.9",
     "whatwg-fetch": "^3.0.0"
   },
   "scripts": {
